@@ -1,0 +1,52 @@
+{
+  "name": "regexplay",
+  "version": "1.0.0",
+  "description": "A command-line regex playground for real-time pattern testing with multiple regex engines",
+  "main": "index.js",
+  "bin": {
+    "regexplay": "./cli.js"
+  },
+  "scripts": {
+    "test": "node test-comprehensive.js",
+    "test:sessions": "node test-sessions.js",
+    "test:highlighting": "node test-highlighting.js",
+    "lint": "eslint .",
+    "start": "node cli.js",
+    "dev": "node cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaporjawn/RegexPlay.git"
+  },
+  "keywords": [
+    "regex",
+    "regexp",
+    "regex-tester",
+    "cli",
+    "terminal",
+    "pcre",
+    "javascript",
+    "pattern-matching",
+    "command-line",
+    "offline"
+  ],
+  "author": "Victor Williams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vaporjawn/RegexPlay/issues"
+  },
+  "homepage": "https://github.com/Vaporjawn/RegexPlay#readme",
+  "dependencies": {
+    "@syntropiq/libpcre-ts": "^1.3.1",
+    "blessed": "^0.1.81"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.36.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-promise": "^7.2.1"
+  }
+}
