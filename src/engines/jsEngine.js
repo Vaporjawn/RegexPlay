@@ -360,8 +360,9 @@ class JavaScriptEngine {
         'No conditional patterns (?(condition)yes|no)',
         'No possessive quantifiers (*+, ++, ?+, {n,m}+)',
         'No atomic groups (?>...)',
-        'Limited PCRE compatibility',
-        'No \G anchor (start of match)',
+  'Limited PCRE compatibility',
+  // Note: Representing literal \G anchor; escape backslash for clarity
+  'No \\G anchor (start of match)',
         'No named subroutines'
       ],
       advantages: [

@@ -89,7 +89,8 @@ function sanitizeFilename(filename) {
   // Remove or replace invalid characters
   const sanitized = filename
     .trim()
-    .replace(/[<>:"|?*\x00-\x1f]/g, '_') // Replace invalid chars with underscore
+  // eslint-disable-next-line no-control-regex -- Intentionally matching control chars 0x00-0x1F
+  .replace(/[<>:"|?*\x00-\x1f]/g, '_') // Replace invalid chars with underscore
     .replace(/^\.+/, '') // Remove leading dots
     .replace(/\.+$/, '') // Remove trailing dots
     .replace(/\s+/g, '_'); // Replace spaces with underscores

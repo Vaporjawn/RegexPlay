@@ -1,8 +1,9 @@
 {
   "name": "regexplay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A command-line regex playground for real-time pattern testing with multiple regex engines",
   "main": "index.js",
+  "type": "commonjs",
   "bin": {
     "regexplay": "./cli.js"
   },
@@ -10,9 +11,14 @@
     "test": "node test-comprehensive.js",
     "test:sessions": "node test-sessions.js",
     "test:highlighting": "node test-highlighting.js",
+    "test:cli": "node test/test-app-cli.js",
+    "test:all": "npm run test && npm run test:sessions && npm run test:highlighting && npm run test:cli",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "start": "node cli.js",
-    "dev": "node cli.js"
+    "dev": "node cli.js",
+    "prepublishOnly": "npm run test:all && npm run lint",
+    "release": "npm run test:all && npm run lint && npm version patch -m 'chore(release): %s' && git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -43,6 +49,17 @@
   "engines": {
     "node": ">=14.0.0"
   },
+  "preferGlobal": true,
+  "files": [
+    "cli.js",
+    "index.js",
+    "src/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "docs/README.md"
+  ],
+  "sideEffects": false,
   "devDependencies": {
     "eslint": "^9.36.0",
     "eslint-plugin-import": "^2.32.0",

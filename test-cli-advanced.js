@@ -36,7 +36,9 @@ function runCLI(args, options = {}) {
     const jsonRun = runCLI(['--mode','cli','--regex','(foo)(bar)?','--text','foobar food','--flags','g','--json','--benchmark=5']);
     test('JSON run exit code is 0', jsonRun.code === 0);
     let parsed;
-    try { parsed = JSON.parse(jsonRun.stdout); } catch (e) {}
+      try { parsed = JSON.parse(jsonRun.stdout); } catch (e) {
+        // Intentionally ignored: test will assert parsed presence separately
+      }
     test('JSON parsed successfully', !!parsed);
     if (parsed) {
       test('JSON includes pattern', parsed.pattern === '(foo)(bar)?');
