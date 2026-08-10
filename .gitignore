@@ -57,10 +57,8 @@ Thumbs.db
 # Node REPL history
 .node_repl_history
 
-# npm versioning
-package-lock.json
-
-# Yarn / pnpm locks (if not used)
+# Yarn / pnpm locks (not used — npm is this project's package manager,
+# package-lock.json is intentionally committed for reproducible installs)
 yarn.lock
 pnpm-lock.yaml
 
